@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\ConcertArtistController;
+use App\Http\Controllers\ConcertController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('concerts', ConcertController::class);
+
+Route::apiResource('artists', ArtistController::class);
+
+Route::apiResource('concerts-artists', ConcertArtistController::class);

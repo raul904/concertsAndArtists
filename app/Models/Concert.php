@@ -9,6 +9,12 @@ class Concert extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'date',
+        'location',
+    ];
+
     public function artists()
     {
         return $this->belongsToMany(Artist::class, 'concert_artists');
